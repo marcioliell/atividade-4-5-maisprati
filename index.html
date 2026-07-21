@@ -1,11 +1,64 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!DOCTYPE html> 
+    <html lang="pt-BR"> 
+        <head> 
+            <meta charset="UTF-8"> 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            <link rel="stylesheet" href="assets/styles/index.css"> 
+            <title>Cadastro de interesse</title> 
+        </head> 
+        <body> 
+            <header> 
+                <h1>News Letter do ABC Mais</h1> 
+                <p>Cadastre-se para receber a nossa newsletter</p> 
+                <button id="btnSaibaMais" onclick="window.open('https://www.abcmais.com', '_blank')">Saiba Mais</button>
+            </header> 
+            
+            <form id="form-cep" class="formulario">
+                <section class="cep">
+                    <h2>Seus dados!!</h2>
+                    
+                    <!-- Informações pessoais -->
+                    <div class="form-row">
+                        <input type="text" placeholder="Nome" class="form-input">
+                        <input type="text" placeholder="Email" class="form-input">
+                    </div>
+                    
+                    <!-- Endereço -->
+                    <div class="form-row">
+                        <input type="text" id="cep" placeholder="Digite seu CEP" class="form-input">
+                    </div>
+                    
+                    <div class="form-row">
+                        <input type="text" id="logradouro" placeholder="Rua" class="form-input full-width">
+                    </div>
+                    
+                    <div class="form-row">
+                        <input type="text" id="Numero" placeholder="Número" class="form-input">
+                        <input type="text" id="bairro" placeholder="Bairro" class="form-input">
+                    </div>
+                    
+                    <div class="form-row">
+                        <input type="text" id="cidade" placeholder="Cidade" class="form-input">
+                        <input type="text" id="uf" placeholder="UF" class="form-input">
+                    </div>
+                    
+                    <!-- Mensagem -->
+                    <textarea placeholder="Mensagem" class="form-textarea"></textarea>
+                    
+                    <div id="resultado"></div>
+                    
+                    <!-- Botão Enviar ao final -->
+                    <button type="button" id="btnBuscar" class="btn-enviar">Enviar</button>
+                </section>
+            </form>
+            <script type="module" src="/assets/js/index.js"></script> 
+            <script>
+                const cepInput = document.getElementById('cep');
+                const numeroInput = document.getElementById('Numero');
+                
+                cepInput.addEventListener('blur', () => {
+                    numeroInput.focus();
+                });
+            </script>
+        </body> 
+    </html>
